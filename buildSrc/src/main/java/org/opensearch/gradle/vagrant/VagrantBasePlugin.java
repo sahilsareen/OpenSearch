@@ -40,6 +40,7 @@ import org.gradle.api.Task;
 import org.gradle.api.execution.TaskActionListener;
 import org.gradle.api.execution.TaskExecutionListener;
 import org.gradle.api.tasks.TaskState;
+// Add import
 
 import java.io.ByteArrayOutputStream;
 import java.nio.charset.StandardCharsets;
@@ -82,7 +83,7 @@ public class VagrantBasePlugin implements Plugin<Project> {
         private static final Pattern VIRTUAL_BOX_VERSION = Pattern.compile("(\\d+\\.\\d+)");
 
         @Override
-        public void apply(Project project) {
+        public void apply(@NonNull Project project) {
             if (project != project.getRootProject()) {
                 throw new IllegalArgumentException("VagrantSetupCheckerPlugin can only be applied to the root project of a build");
             }
